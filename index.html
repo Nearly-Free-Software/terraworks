@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nearly Free Software Dashboard</title>
+  <style>
+    /*
+      This stylesheet attempts to loosely mirror the look and feel of the
+      original dashboard hosted at dashboard.nearlyfreesoftware.com.  It
+      uses a restrained palette, generous whitespace and simple cards to
+      organise the various services offered.  The primary brand colour
+      (used on links and badges) is a medium blue reminiscent of the
+      original site, and each service badge is coloured distinctly to
+      improve scannability.  The layout is responsive: on wider screens
+      cards flow into multiple columns, while on small screens they stack.
+    */
+    :root {
+      --bg-colour: #f5f8ff;
+      --text-primary: #1f2937;
+      --text-secondary: #475569;
+      --link-colour: #2563eb;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-colour);
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .header img {
+      width: 60px;
+      height: 60px;
+      margin-right: 0.5rem;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin: 0;
+    }
+
+    .tagline {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .tagline a {
+      color: var(--link-colour);
+      font-size: 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .tagline a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-top: 3rem;
+    }
+
+    .section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px var(--card-shadow);
+      text-align: center;
+    }
+
+    .icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 2rem;
+      margin: 0 auto 0.75rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      margin: 0.25rem 0 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .doc-link {
+      color: var(--link-colour);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .doc-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      margin: 3rem 0;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .footer .cat {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+
+    .powered-by {
+      margin-top: 1rem;
+    }
+
+    .powered-by a {
+      color: var(--link-colour);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .powered-by a:hover {
+      text-decoration: underline;
+    }
+
+    /* Individual colours for service icons */
+    .icon.nextcloud {
+      background-color: #2a7bde; /* blue */
+    }
+
+    .icon.roundcube {
+      background-color: #3bb5ad; /* teal */
+    }
+
+    .icon.vaultwarden {
+      background-color: #4b5563; /* gray */
+    }
+
+    .icon.wordpress {
+      background-color: #21759b; /* WP blue */
+    }
+
+    .icon.billing {
+      background-color: #8b5cf6; /* purple */
+    }
+
+    .icon.headplane {
+      background-color: #ec4899; /* pink */
+    }
+
+    .icon.panel {
+      background-color: #4f46e5; /* indigo */
+    }
+
+    .icon.powerdns {
+      background-color: #ea580c; /* orange */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header with company logo and acronym -->
+    <div class="header">
+      <!-- Replace the original Federated Core star icon with the uploaded NFS logo -->
+      <img src="NFS log transparent large.png" alt="Nearly Free Software logo" />
+      <h1>NFS</h1>
+    </div>
+    <!-- Company domain link -->
+    <div class="tagline">
+      <a href="https://nearlyfreesoftware.com" target="_blank" rel="noopener">nearlyfreesoftware.com</a>
+    </div>
+
+    <!-- Applications section -->
+    <div class="section">
+      <h2>Applications</h2>
+      <div class="grid">
+        <!-- Nextcloud card -->
+        <div class="card">
+          <div class="icon nextcloud">N</div>
+          <h3>Nextcloud</h3>
+          <p>Files, Documents, Email</p>
+          <a class="doc-link" href="#">Documentation</a>
+        </div>
+        <!-- Roundcube card -->
+        <div class="card">
+          <div class="icon roundcube">R</div>
+          <h3>Roundcube</h3>
+          <p>Web Mail</p>
+          <a class="doc-link" href="#">Documentation</a>
+        </div>
+        <!-- Vaultwarden card -->
+        <div class="card">
+          <div class="icon vaultwarden">V</div>
+          <h3>Vaultwarden</h3>
+          <p>Passwords</p>
+          <a class="doc-link" href="#">Documentation</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content management section -->
+    <div class="section">
+      <h2>Content Management</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="icon wordpress">W</div>
+          <h3>WordPress</h3>
+          <p>Your website</p>
+          <a class="doc-link" href="#">Documentation</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Administration section -->
+    <div class="section">
+      <h2>Administration</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="icon billing">B</div>
+          <h3>Billing</h3>
+          <p>Federated Subscription Management</p>
+          <a class="doc-link" href="#">Documentation</a>
+        </div>
+        <div class="card">
+          <div class="icon headplane">H</div>
+          <h3>Headplane</h3>
+          <p>User Interface for the Headscale VPN</p>
+          <a class="doc-link" href="#">Documentation</a>
+        </div>
+        <div class="card">
+          <div class="icon panel">P</div>
+          <h3>Panel</h3>
+          <p>Create and Manage Users</p>
+          <a class="doc-link" href="#">Documentation</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Infrastructure section -->
+    <div class="section">
+      <h2>Infrastructure</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="icon powerdns">P</div>
+          <h3>PowerDNS</h3>
+          <p>DNS Domain Management</p>
+          <a class="doc-link" href="#">Documentation</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer with disclaimer, cat graphic, and powered-by link -->
+    <div class="footer">
+      <p>All logos are property of their respective project.</p>
+      <!-- Use a simple emoji cat to pay homage to the original pixel art -->
+      <div class="cat">🐱</div>
+      <div class="powered-by">
+        Powered by <a href="https://nearlyfreesoftware.com" target="_blank" rel="noopener">Nearly Free Software</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
