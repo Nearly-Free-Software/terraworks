@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nearly Free Software Dashboard</title>
+  <title>Terraworks AI Dashboard</title>
   <style>
     :root {
       --bg-colour: #f5f8ff;
@@ -79,8 +79,20 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .card {
@@ -103,7 +115,6 @@
       margin: 0 auto 0.75rem;
     }
 
-    /* Remove underline from icon links */
     .card > a {
       text-decoration: none;
       display: inline-block;
@@ -141,11 +152,6 @@
       color: var(--text-secondary);
     }
 
-    .footer .cat {
-      font-size: 2rem;
-      margin: 1rem 0;
-    }
-
     .powered-by {
       margin-top: 1rem;
     }
@@ -168,6 +174,10 @@
     .icon.headplane { background-color: #ec4899; }
     .icon.panel { background-color: #4f46e5; }
     .icon.powerdns { background-color: #ea580c; }
+    .icon.slack { background-color: #4A154B; }
+    .icon.linear { background-color: #000000; }
+    .icon.notion { background-color: #111111; }
+    .icon.calcom { background-color: #111827; }
   </style>
 </head>
 <body>
@@ -178,35 +188,64 @@
     </div>
 
     <div class="tagline">
-      <a href="https://nearlyfreesoftware.com" target="_blank" rel="noopener">nearlyfreesoftware.com</a>
+      <a href="https://terraworks.me" target="_blank" rel="noopener">terraworks.me</a>
     </div>
 
     <div class="section">
       <h2>Applications</h2>
       <div class="grid">
         <div class="card">
-          <a href="https://nextcloud.nearlyfreesoftware.com" target="_blank" rel="noopener">
+          <a href="https://nextcloud.terraworks.me" target="_blank" rel="noopener">
             <div class="icon nextcloud">N</div>
           </a>
           <h3>Nextcloud</h3>
           <p>Files, Documents, Email</p>
           <a class="doc-link" href="https://docs.nextcloud.com/server/latest/user_manual/en/" target="_blank" rel="noopener">Documentation</a>
         </div>
+
         <div class="card">
-          <a href="https://roundcube.nearlyfreesoftware.com" target="_blank" rel="noopener">
+          <a href="https://roundcube.terraworks.me" target="_blank" rel="noopener">
             <div class="icon roundcube">R</div>
           </a>
           <h3>Roundcube</h3>
           <p>Web Mail</p>
           <a class="doc-link" href="https://roundcube.net/support/" target="_blank" rel="noopener">Documentation</a>
         </div>
+
         <div class="card">
-          <a href="https://vaultwarden.nearlyfreesoftware.com" target="_blank" rel="noopener">
+          <a href="https://vaultwarden.terraworks.me" target="_blank" rel="noopener">
             <div class="icon vaultwarden">V</div>
           </a>
           <h3>Vaultwarden</h3>
           <p>Passwords</p>
           <a class="doc-link" href="https://bitwarden.com/help/onboarding-and-succession/" target="_blank" rel="noopener">Documentation</a>
+        </div>
+
+        <div class="card">
+          <a href="https://terraworksai.slack.com" target="_blank" rel="noopener">
+            <div class="icon slack">S</div>
+          </a>
+          <h3>Slack</h3>
+          <p>Team Communication</p>
+          <a class="doc-link" href="https://slack.com/help" target="_blank" rel="noopener">Documentation</a>
+        </div>
+
+        <div class="card">
+          <a href="https://linear.app" target="_blank" rel="noopener">
+            <div class="icon linear">L</div>
+          </a>
+          <h3>Linear</h3>
+          <p>Issue Tracking & Project Management</p>
+          <a class="doc-link" href="https://linear.app/docs" target="_blank" rel="noopener">Documentation</a>
+        </div>
+
+        <div class="card">
+          <a href="https://calcom.terraworks.me" target="_blank" rel="noopener">
+            <div class="icon calcom">C</div>
+          </a>
+          <h3>Cal.com</h3>
+          <p>Scheduling & Booking</p>
+          <a class="doc-link" href="https://cal.com/docs" target="_blank" rel="noopener">Documentation</a>
         </div>
       </div>
     </div>
@@ -215,12 +254,20 @@
       <h2>Content Management</h2>
       <div class="grid">
         <div class="card">
-          <a href="https://nearlyfreesoftware.com" target="_blank" rel="noopener">
+          <a href="https://terraworks.me" target="_blank" rel="noopener">
             <div class="icon wordpress">W</div>
           </a>
           <h3>WordPress</h3>
           <p>Your website</p>
           <a class="doc-link" href="https://wordpress.org/documentation/" target="_blank" rel="noopener">Documentation</a>
+        </div>
+        <div class="card">
+          <a href="https://notion.so" target="_blank" rel="noopener">
+            <div class="icon notion">N</div>
+          </a>
+          <h3>Notion</h3>
+          <p>Docs, Notes & Knowledge Base</p>
+          <a class="doc-link" href="https://www.notion.so/help" target="_blank" rel="noopener">Documentation</a>
         </div>
       </div>
     </div>
@@ -228,16 +275,8 @@
     <div class="section">
       <h2>Administration</h2>
       <div class="grid">
-        <!--
         <div class="card">
-          <div class="icon billing">B</div>
-          <h3>Billing</h3>
-          <p>Federated Subscription Management</p>
-          <a class="doc-link" href="{{LINK}}" target="_blank" rel="noopener">Documentation</a>
-        </div>
-        -->
-        <div class="card">
-          <a href="https://headscale.nearlyfreesoftware.com/admin" target="_blank" rel="noopener">
+          <a href="https://headscale.terraworks.me/admin" target="_blank" rel="noopener">
             <div class="icon headplane">H</div>
           </a>
           <h3>Headplane</h3>
@@ -245,21 +284,15 @@
           <a class="doc-link" href="https://headplane.net/README" target="_blank" rel="noopener">Documentation</a>
         </div>
         <div class="card">
-          <a href="https://panel.nearlyfreesoftware.com" target="_blank" rel="noopener">
+          <a href="https://panel.terraworks.me" target="_blank" rel="noopener">
             <div class="icon panel">P</div>
           </a>
           <h3>Panel</h3>
           <p>Create and Manage Users</p>
-          <a class="doc-link" href="{{LINK}}" target="_blank" rel="noopener">Documentation</a>
+          <a class="doc-link" href="#" target="_blank" rel="noopener">Documentation</a>
         </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Infrastructure</h2>
-      <div class="grid">
-        <div class="card">
-          <a href="https://powerdns.nearlyfreesoftware.com" target="_blank" rel="noopener">
+              <div class="card">
+          <a href="https://powerdns.terraworks.me/" target="_blank" rel="noopener">
             <div class="icon powerdns">P</div>
           </a>
           <h3>PowerDNS</h3>
@@ -270,7 +303,6 @@
     </div>
 
     <div class="footer">
-      <!-- <p>All logos are property of their respective project.</p> -->
       <div class="powered-by">
         Powered by <a href="https://nearlyfreesoftware.com" target="_blank" rel="noopener">Nearly Free Software</a>
       </div>
